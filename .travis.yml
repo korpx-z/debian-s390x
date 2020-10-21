@@ -3,9 +3,9 @@ services:
   - docker
 env:
   global:
-    - BUILD_DIR="$PWD/buster/backports"
+    - BUILD_DIR="$PWD/bullseye"
     - REPO="quay.io/ibmz/debian"
-    - TAG="$REPO:buster-backports"
+    - TAG="$REPO:bullseye"
 before_script: 
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
 script: 
