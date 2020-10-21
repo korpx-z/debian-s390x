@@ -3,9 +3,9 @@ services:
   - docker
 env:
   global:
-    - BUILD_DIR="$PWD/bullseye/backports"
+    - BUILD_DIR="$PWD/stretch"
     - REPO="quay.io/ibmz/debian"
-    - TAG="$REPO:bullseye-backports"
+    - TAG="$REPO:stretch"
 before_script: 
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
 script: 
