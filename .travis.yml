@@ -3,9 +3,9 @@ services:
   - docker
 env:
   global:
-    - BUILD_DIR="$PWD/stretch/backports"
+    - BUILD_DIR="$PWD/stable"
     - REPO="quay.io/ibmz/debian"
-    - TAG="$REPO:stretch-backports"
+    - TAG="$REPO:stable"
 before_script: 
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
 script: 
