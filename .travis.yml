@@ -3,9 +3,9 @@ services:
   - docker
 env:
   global:
-    - BUILD_DIR="$PWD/bullseye"
+    - BUILD_DIR="$PWD/bullseye/slim"
     - REPO="quay.io/ibmz/debian"
-    - TAG="$REPO:bullseye"
+    - TAG="$REPO:bullseye-slim"
 before_script: 
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
 script: 
