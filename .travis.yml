@@ -3,13 +3,12 @@ services:
   - docker
 env:
   global:
-    - BUILD_DIR="$PWD/docker-debian-artifacts/buster"
+    - BUILD_DIR="$PWD/buster/slim"
     - REPO="quay.io/ibmz/debian"
-    - TAG="$REPO:buster"
+    - TAG="$REPO:buster-slim"
 before_script: 
-  - cd $TEST_DIR && chmod +x $TEST_SCRIPT
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
 script: 
-  - docker build $BUILD_DIR --tag $TAG
+  - cd $BUILD_DIR && docker build . --tag $TAG
 after_script:
   - docker push $REPO
