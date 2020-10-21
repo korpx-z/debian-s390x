@@ -3,9 +3,9 @@ services:
   - docker
 env:
   global:
-    - BUILD_DIR="$PWD/buster/slim"
+    - BUILD_DIR="$PWD/buster/backports"
     - REPO="quay.io/ibmz/debian"
-    - TAG="$REPO:buster-slim"
+    - TAG="$REPO:buster-backports"
 before_script: 
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
 script: 
