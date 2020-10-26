@@ -11,4 +11,4 @@ before_script:
 script: 
   - cd $BUILD_DIR && docker build . --tag $TAG
 after_script:
-  - docker push $REPO
+  - docker push $TAG
