@@ -3,6 +3,7 @@ services:
   - docker
 env:
   global:
+    - TEST_SCRIPT="test.sh"
     - TEST_DIR="$PWD/sid/slim"
     - BUILD_DIR="$PWD/sid/slim"
     - REPO="quay.io/ibmz/debian"
