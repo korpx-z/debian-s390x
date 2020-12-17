@@ -4,7 +4,7 @@ services:
 env:
   global:
     - BUILD_DIR="$PWD/sid"
-    - REPO="quay.io/ibmz/debian"
+    - REPO="quay.io/ibm/debian"
     - TAG="$REPO:sid"
 before_script: 
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
