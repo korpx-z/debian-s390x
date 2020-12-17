@@ -4,7 +4,7 @@ services:
 env:
   global:
     - BUILD_DIR="$PWD/bullseye"
-    - REPO="quay.io/ibmz/debian"
+    - REPO="quay.io/ibm/debian"
     - TAG="$REPO:bullseye"
 before_script: 
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
