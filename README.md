@@ -1,29 +1,24 @@
-# docker-debian-artifacts
+###This image is built to run on s390x
+-    [build source](https://github.com/korpx-z/docker-debian-artifacts)
+-    [original source code](https://github.com/debuerreotype/docker-debian-artifacts)
+# Tags
+Outside of Debian 9 (Stretch) and Debian 8 (Jessie) - all variants of Debian are available here for use. 
+-	[`sid`](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=sid)
+-	[`sid-slim`](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=sid-slim)
+-	[`stable`](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=stable)
+-	[`stable-slim`](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=stable-slim)
+-	[`bullseye`](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=bullseye)
+-	[`bullseye-slim`](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=bullseye-slim)
+-	[`buster`](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=buster)
+-	[`buster-slim`](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=buster-slim)
 
--	[`sid`](https://github.com/korpx-z/docker-debian-artifacts)  [![Build Status](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=sid)](https://travis-ci.com/github/korpx-z/docker-debian-artifacts)
--	[`sid-slim`](https://github.com/korpx-z/docker-debian-artifacts)  [![Build Status](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=sid-slim)](https://travis-ci.com/github/korpx-z/docker-debian-artifacts)
--	[`stable`](https://github.com/korpx-z/docker-debian-artifacts)  [![Build Status](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=stable)](https://travis-ci.com/github/korpx-z/docker-debian-artifacts)
--	[`stable-slim`](https://github.com/korpx-z/docker-debian-artifacts)  [![Build Status](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=stable-slim)](https://travis-ci.com/github/korpx-z/docker-debian-artifacts)
--	[`bullseye`](https://github.com/korpx-z/docker-debian-artifacts)  [![Build Status](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=bullseye)](https://travis-ci.com/github/korpx-z/docker-debian-artifacts)
--	[`bullseye-slim`](https://github.com/korpx-z/docker-debian-artifacts)  [![Build Status](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=bullseye-slim)](https://travis-ci.com/github/korpx-z/docker-debian-artifacts)
--	[`buster`](https://github.com/korpx-z/docker-debian-artifacts)  [![Build Status](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=buster)](https://travis-ci.com/github/korpx-z/docker-debian-artifacts)
--	[`buster-slim`](https://github.com/korpx-z/docker-debian-artifacts)  [![Build Status](https://travis-ci.com/korpx-z/docker-debian-artifacts.svg?branch=buster-slim)](https://travis-ci.com/github/korpx-z/docker-debian-artifacts)
-
-# What is Debian?
-
+# Debian
 Debian is an operating system which is composed primarily of free and open-source software, most of which is under the GNU General Public License, and developed by a group of individuals known as the Debian project. Debian is one of the most popular Linux distributions for personal computers and network servers, and has been used as a base for several other Linux distributions.
 
 > [wikipedia.org/wiki/Debian](https://en.wikipedia.org/wiki/Debian)
 
-![logo](https://raw.githubusercontent.com/docker-library/docs/b449be7df57e9ed9086bb5821bfb5d6cdc5d67a4/debian/logo.png)
 
-# Tags Available
-Outside of Debian 9 (Stretch) and Debian 8 (Jessie) - all variants of Debian are available here for use. 
-<br />
-**_debian:buster_** <br />
-**_debian:sid_**<br />
-**_debian:stable_** <br />
-**_debian:bullseye_** <br />
+
 
 ## Locales
 
@@ -36,12 +31,6 @@ RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* 
 	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.utf8
 ```
-
-## How It's Made
-
-The rootfs tarballs for this image are built using [the reproducible-Debian-rootfs tool, `debuerreotype`](https://github.com/debuerreotype/debuerreotype), with an explicit goal being that they are transparent and reproducible. Using the same toolchain, it should be possible to regenerate (clean-room!) the same tarballs used for building the official Debian images. [The `build.sh` script in that debuerreotype repository](https://github.com/debuerreotype/debuerreotype/blob/master/build.sh) (and the `build-all.sh` companion/wrapper) is the canonical entrypoint used for creating the artifacts published in this image.
-
-Additionally, the scripts in [https://github.com/debuerreotype/docker-debian-artifacts](https://github.com/debuerreotype/docker-debian-artifacts) are used to create each tag's `Dockerfile` and collect architecture-specific tarballs into [`dist-ARCH` branches on the same repository](https://github.com/debuerreotype/docker-debian-artifacts/branches), which also contain extra metadata about the artifacts included in each build, such as explicit package versions included in the base image (`rootfs.manifest`), the exact snapshot.debian.org timestamp used for `debuerreotype` invocation (`rootfs.debuerreotype-epoch`), the `sources.list` found in the image (`rootfs.sources-list`) and the one used during image creation (`rootfs.sources-list-snapshot`), etc.
 
 # Image Variants
 
