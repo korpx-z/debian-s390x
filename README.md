@@ -1,5 +1,5 @@
 ### This image is built to run on s390x
--    [build source](https://github.com/korpx-z/docker-debian-artifacts)
+-    [build source](https://github.com/korpx-z/debian-s390x)
 -    [original source code](https://github.com/debuerreotype/docker-debian-artifacts)
 # Tags
 Outside of Debian 9 (Stretch) and Debian 8 (Jessie) - all variants of Debian are available here for use. 
