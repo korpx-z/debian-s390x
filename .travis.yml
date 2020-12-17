@@ -3,8 +3,8 @@ services:
   - docker
 env:
   global:
-    - BUILD_DIR="$PWD/docker-debian-artifacts/buster"
-    - REPO="quay.io/ibmz/debian"
+    - BUILD_DIR="$PWD/buster"
+    - REPO="quay.io/ibm/debian"
     - TAG="$REPO:buster"
 before_script: 
   - cd $TEST_DIR && chmod +x $TEST_SCRIPT
