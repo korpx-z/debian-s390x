@@ -11,6 +11,6 @@ docker run -i --rm --name version-bash quay.io/ibmz/debian:sid-slim bash --versi
 
 # expecting
 # Hello World!
-docker run -i --rm --name hello-bash quay.io/ibmz/debian:sid-slim echo 'Hello World!'
+docker run -i --rm --name hello-bash quay.io/ibm/debian:sid-slim echo 'Hello World!'
 
 echo -e "\n $ANSI_GREEN *** TEST COMPLETED SUCESSFULLY *** $ANSI_RESET \n"

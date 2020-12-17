@@ -6,7 +6,7 @@ env:
     - TEST_SCRIPT="test.sh"
     - TEST_DIR="$PWD/sid/slim"
     - BUILD_DIR="$PWD/sid/slim"
-    - REPO="quay.io/ibmz/debian"
+    - REPO="quay.io/ibm/debian"
     - TAG="$REPO:sid-slim"
 before_script: 
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
